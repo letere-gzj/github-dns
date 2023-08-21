@@ -1,30 +1,28 @@
 package githubdns.constant;
 
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * @author gaozijie
  * @date 2023-08-15
  */
 public interface Constant {
-
-    List<String> GITHUB_DOMAIN_NAMES = Arrays.asList(
-            "github.com",
-            "github.global.ssl.fastly.net",
-            "assets-cdn.github.com",
-            "github.githubassets.com"
-    );
-
+    /**
+     * 查询域名ip地址
+     */
     String QUERY_URL = "https://ip.tool.chinaz.com/%s";
-
+    /**
+     * 日期格式化样式
+     */
     String DATE_FORMAT_PATTEN = "yyyy-MM-dd HH:mm:ss";
-
+    /**
+     * hosts文件内容前缀
+     */
     String HOST_PREFIX = "# github speedup start";
-
+    /**
+     * hosts文件内容后缀
+     */
     String HOST_SUFFIX = "# github speedup end";
-
-    String HOST_FILE_PATH = "C:\\Windows\\System32\\drivers\\etc\\hosts";
-
+    /**
+     * 刷新windows DNS 缓存命令
+     */
     String REFRESH_DNS_CMD = "ipconfig /flushdns";
 }
