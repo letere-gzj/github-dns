@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 /**
  * @author gaozijie
- * @date 2023-08-15
+ * @since 2023-08-15
  */
 public class Run {
     private final static DnsQueryService dnsQueryService = new DnsQueryService();
@@ -24,7 +24,6 @@ public class Run {
         try {
             runProcess();
         } catch (Exception e) {
-            System.out.println("程序出错！！！原因为:" + e.getMessage());
             e.printStackTrace();
         }
     }

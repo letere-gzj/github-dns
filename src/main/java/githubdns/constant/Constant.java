@@ -2,7 +2,7 @@ package githubdns.constant;
 
 /**
  * @author gaozijie
- * @date 2023-08-15
+ * @since 2023-08-15
  */
 public interface Constant {
     /**

@@ -19,8 +19,8 @@ public class DefaultConfig {
     public static String queryUrl;
 
     private final static String CONF_DOMAINS = "domains";
-    private final static String CONF_HOSTS_PATH = "hosts_path";
-    private final static String CONF_QUERY_TYPE = "query_type";
+    private final static String CONF_HOSTS_PATH = "hostsPath";
+    private final static String CONF_QUERY_TYPE = "queryType";
     private final static String CONFIG_PATH = "./conf/default.conf";
 
     static {
@@ -42,19 +42,16 @@ public class DefaultConfig {
      * @return 配置文件映射
      */
     private static Map<String, String> loadConfig() {
-        String confText = FileUtil.readUtf8String(new File(CONFIG_PATH));
-        String[] confParams = confText.split("\r\n");
+        List<String> lines = FileUtil.readUtf8Lines(new File(CONFIG_PATH));
         Map<String, String> config = new HashMap<>(16);
-        for (String confParam : confParams) {
-            // 跳过注释
-            if (confParam.startsWith("#")) {
+        int index;
+        for (String line : lines) {
+            // 跳过注释和空行
+            if (line.startsWith("#") || Objects.equals(line.length(), 0)) {
                 continue;
             }
-            String[] params = confParam.split(": ");
-            if (params.length != 2) {
-                continue;
-            }
-            config.put(params[0], params[1]);
+            index = line.indexOf("=");
+            config.put(line.substring(0, index), line.substring(index+1));
         }
         return config;
     }

@@ -33,7 +33,12 @@ public class DnsQueryService {
         for (String domainName : domainNames) {
             List<String> ips = this.getIps(domainName);
             LOG.info(String.format("%s -> %s", domainName, ips));
-            domainIpMap.put(domainName, ips);
+            if (!CollUtil.isEmpty(ips)) {
+                domainIpMap.put(domainName, ips);
+            }
+        }
+        if (CollUtil.isEmpty(domainIpMap)) {
+            throw new RuntimeException("ip地址查询失败，请联系管理员进行处理");
         }
         return domainIpMap;
     }

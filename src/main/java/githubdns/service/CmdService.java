@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
 
 /**
  * @author gaozijie
- * @date 2023-08-17
+ * @since 2023-08-17
  */
 public class CmdService {
 
@@ -32,9 +32,9 @@ public class CmdService {
         Process process = Runtime.getRuntime().exec("cmd /c " + cmd);
         // 打印控制台信息
         BufferedReader input = new BufferedReader(new InputStreamReader(process.getInputStream(), CharsetUtil.CHARSET_GBK));
-        String line = "";
+        String line;
         while ((line = input.readLine()) != null) {
-            LOG.info(line);
+            System.out.println(line);
         }
         input.close();
     }

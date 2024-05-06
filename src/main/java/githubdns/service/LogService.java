@@ -7,7 +7,7 @@ import java.time.format.DateTimeFormatter;
 
 /**
  * @author gaozijie
- * @date 2023-08-16
+ * @since 2023-08-16
  */
 public class LogService {
 
