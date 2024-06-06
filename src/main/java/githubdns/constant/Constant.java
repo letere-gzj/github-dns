@@ -9,7 +9,7 @@ public interface Constant {
      * 查询域名ip地址
      */
     String QUERY_URL_IP_TOOL = "https://ip.tool.chinaz.com/%s";
-    String QUERY_URL_IP_ADDRESS = "https://sites.ipaddress.com/%s";
+    String QUERY_URL_IP_ADDRESS = "https://www.ipaddress.com/website/%s";
     /**
      * 日期格式化样式
      */
